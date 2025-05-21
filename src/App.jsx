@@ -5,12 +5,13 @@ import './App.css'
 import MySlider from '../component/MySlider'
 
 function App() {
+  //useState 即時更新，可以讓你的元件「記住資料」，而且當資料變動時，自動幫你重新渲染畫面（更新 UI）。
   const [count, setCount] = useState(0)
 
   const [r, setR] = useState(128)
   const [g, setG] = useState(128)
   const [b, setB] = useState(128)
-  const backgroundColor = `rgb(${r}, ${g}, ${b})`
+  const backgroundColor = `rgb(${r}, ${g}, ${b})` //即時更新最新的 r, g, b 數值
 
   return (
     <>
