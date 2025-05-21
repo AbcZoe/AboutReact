@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import MySlider from '../component/MySlider'
 import MyPanel from '../component/MyPanel'
+import MyCalculator from '../component/MyCalculator'
 
 function App() {
   //useState 即時更新，可以讓你的元件「記住資料」，而且當資料變動時，自動幫你重新渲染畫面（更新 UI）。
@@ -37,6 +38,8 @@ function App() {
         <p>B：<MyPanel value={b} onChange={setB} /></p>
         <p>{backgroundColor}</p>
       </div>
+      <h2>我的第三個元件:計算機</h2>
+      <MyCalculator />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
