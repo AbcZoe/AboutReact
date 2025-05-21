@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import MySlider from '../component/MySlider'
+import MyPanel from '../component/MyPanel'
 
 function App() {
   //useState 即時更新，可以讓你的元件「記住資料」，而且當資料變動時，自動幫你重新渲染畫面（更新 UI）。
@@ -26,10 +27,15 @@ function App() {
       <h1>本網站使用Vite + React開發</h1>
       <h2>五專資工三甲 5B1G0008 陳柔雅</h2>
       <h2>我的第一個元件:Slider</h2>
+      <p>R：<MySlider/></p>
+        <p>G：<MySlider/></p>
+        <p>B：<MySlider/></p>
+      <h2>我的第二個元件:RGB_Panel</h2>
       <div id="area" style={{ backgroundColor, padding: '20px' }}>
-        <p>R：<MySlider value={r} onChange={setR} /></p>
-        <p>G：<MySlider value={g} onChange={setG} /></p>
-        <p>B：<MySlider value={b} onChange={setB} /></p>
+        <p>R：<MyPanel value={r} onChange={setR} /></p>
+        <p>G：<MyPanel value={g} onChange={setG} /></p>
+        <p>B：<MyPanel value={b} onChange={setB} /></p>
+        <p>{backgroundColor}</p>
       </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
