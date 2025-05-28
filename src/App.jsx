@@ -2,9 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import MySlider from '../component/MySlider'
-import MyPanel from '../component/MyPanel'
-import MyCalculator from '../component/MyCalculator'
+import MySlider from '../component/RGB-Panel/MySlider'
+import MyPanel from '../component/RGB-Panel/MyPanel'
+import MyCalculator from '../component/Calculator/MyCalculator'
 
 function App() {
   //useState 即時更新，可以讓你的元件「記住資料」，而且當資料變動時，自動幫你重新渲染畫面（更新 UI）。
