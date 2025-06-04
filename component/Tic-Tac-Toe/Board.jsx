@@ -2,7 +2,7 @@ import React from "react";
 import Square from "./Square";
 import "./tictactoe.css";
 
-function Board() {
+function Board({squares, xIsNext, onPlay}) {
 
   const handleClick = (i)=>{
     console.log(`Square[${i}]`)
