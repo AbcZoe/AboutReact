@@ -22,11 +22,18 @@ function TicTacToe() {
     const moves = history.map((squares,move) => {
         let description;
         if(move>0){
-            description = `Go to ${move}`;
+            description = `Go to #${move}`;
         }else{
             description = 'Go to game start';
         }
-    })
+        return(
+            <>
+                <li key={move}>
+                    <button onClick={()=>jumpTo(move)}>{description}</button>
+                </li>
+            </>
+        );
+    });
 
     return (
         <>
@@ -35,8 +42,9 @@ function TicTacToe() {
                 <div className='game-board'>
                 <Board squares={currentSquares} xIsNext={xIsNext} onPlay={handlePlay} />
                 </div>
-                <div className='game-state'>
-
+                <div className='game-info'>
+                    <h4>遊戲歷程</h4>
+                    <ol>{moves}</ol>
                 </div>
             </div>
         </>
