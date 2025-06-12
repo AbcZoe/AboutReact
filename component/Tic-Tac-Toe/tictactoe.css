@@ -37,3 +37,9 @@
     padding: 20px;
     align-items: center;
 }
+
+.square.highlight {
+    background-color: rgb(255, 235, 124);
+    font-weight: bold;
+    color: black;
+  }
