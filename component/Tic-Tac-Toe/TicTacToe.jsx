@@ -8,6 +8,7 @@ function TicTacToe() {
     const [currentMove,setCurrentMove] = useState(0); //步數
     const xIsNext = currentMove%2 === 0;
     const currentSquares=history[currentMove];
+    
 
     function handlePlay(nextSquares){
         const nextHistory = [...history.slice(0,currentMove+1),nextSquares];

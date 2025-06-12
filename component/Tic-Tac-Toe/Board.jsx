@@ -3,6 +3,27 @@ import Square from "./Square";
 import "./tictactoe.css";
 
 function Board({squares, xIsNext, onPlay}) {
+  function handleClick(i) {
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    if (xIsNext) {
+      nextSquares[i] = 'X';
+    } else {
+      nextSquares[i] = 'O';
+    }
+    onPlay(nextSquares);
+  }
+  
+  const winner=calculateWinner(squares);
+  let status;
+  if(winner){
+    status=`Winner: ${winner}`;
+  }else{
+    status=`Next Player: ${xIsNext ? 'X':'O'}`;
+  }
+
   function calculateWinner(squares){
     const lines = [
       [0, 1, 2],
@@ -20,33 +41,14 @@ function Board({squares, xIsNext, onPlay}) {
       if(squares[a] && squares[a]===squares[b] && squares[a]===squares[c]){
         return squares[a];
       }
-      return null;
     }
+    return null;
   }
-
-  const winner=calculateWinner(squares);
-  let status;
-  if(winner){
-    status=`Winner: ${winner}`;
-  }else{
-    status=`Next Player: ${xIsNext ? 'X':'O'}`;
-  }
-
-  const handleClick = (i) =>{
-    if(nextSquare[i] || calculateWinner(nextSquares)){
-      return;
-    }
-    const nextSquares=squares.slice();
-    if(xIsNext){
-      nextSquares[i]='X';
-    }else{
-      nextSquares[i]='O';
-    }
-    onPlay(nextSquares)
-  };
 
   return (
     <>
+      <div className="status">{status}</div>
+
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
